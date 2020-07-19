@@ -3,6 +3,7 @@ const routes = express.Router();
 
 const ItemController = require('../src/controller/ItemController');
 
+routes.get('/item/:id', ItemController.item);
 routes.get('/itens', ItemController.itens);
 routes.post('/cadastro', ItemController.cadastro);
 routes.put('/edita/:id', ItemController.edita);

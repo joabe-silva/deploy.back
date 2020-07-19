@@ -8,10 +8,16 @@ module.exports =  {
         return res.json(itens);
     },
     async itens(req, res) {
-        const itens = await Item.find();
-
+        const { page = 1 } = req.query;
+        const itens = await Item.paginate({}, { page, limit: 8 });
+    
         return res.json(itens);
     },
+    // async itens(req, res) {
+    //     const itens = await Item.find();
+
+    //     return res.json(itens);
+    // },
     async cadastro(req, res) {
         const itens = await Item.create(req.body);
 

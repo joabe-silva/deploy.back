@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const mongoosePaginate = require('mongoose-paginate');
 
 const ItemSchema = new mongoose.Schema({
     titulo: {
@@ -9,5 +10,7 @@ const ItemSchema = new mongoose.Schema({
         default: Date.now
     }
 });
+
+ItemSchema.plugin(mongoosePaginate);
 
 mongoose.model('Item', ItemSchema);
