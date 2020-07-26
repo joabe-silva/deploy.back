@@ -4,7 +4,8 @@
   "description": "API em NodeJS para realizar Select, Insert, Update e Delete em base de dados MongoDB Atlas",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "nodemon server.js",
+    "prod": "node server.js"
   },
   "repository": {
     "type": "git",
